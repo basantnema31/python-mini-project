@@ -1191,8 +1191,9 @@ function closeProjectSafe() {
   }
   
   if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+    var elToFocus = lastFocusedElement;
     setTimeout(function() {
-      lastFocusedElement.focus({ preventScroll: true });
+      elToFocus.focus({ preventScroll: true });
     }, 50);
   }
   lastFocusedElement = null;
